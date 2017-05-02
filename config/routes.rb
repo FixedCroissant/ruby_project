@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'welcome/index'
   
 
-  resources :articles
+  resources :articles  do
+  	resources  :comments
+  end
 
   ##TELLS RAILS TO MAP THE ROOT OF THE APPLICATION TO THIS CONTROLLER'S METHOD.
   root 'welcome#index'
