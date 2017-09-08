@@ -6,7 +6,7 @@
 		<th>Title</th>
 		<th>Text</th>
 	</tr>
-	<%= link_to 'Create Article', 'articles/new'  %>
+	<%= link_to 'Create Article', 'articles/new'%>
 	<%= @articles.each do |article|%>
 	<tr>
 		<td><%= article.id %></td>
@@ -21,7 +21,13 @@
 	</tr>
 	<% end %>
 	<tr>
+		<td>
+			&nbsp;
+		</td>
+	</tr>
+	<tr>
 		<td><%= link_to 'Go to Homepage', root_path  %></td>
-	</tr>	
+	</tr>
 </table>
 
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
