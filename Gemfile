@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.2'
 
 # Devise user management
 gem 'devise'
+# Authority gem
+gem 'authority'
+# Rolify gem
+gem 'rolify'
 # Rails Admin User Interface
 gem 'rails_admin', '~> 1.2'
 # Use jquery as the JavaScript library
