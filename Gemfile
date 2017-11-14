@@ -18,8 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 
 # Devise user management
 gem 'devise'
-# Authority gem
-gem 'authority'
+# CanCanCan gem
+gem 'cancancan'
 # Rolify gem
 gem 'rolify'
 # Rails Admin User Interface

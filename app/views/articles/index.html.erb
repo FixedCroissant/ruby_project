@@ -6,14 +6,17 @@
 		<th>Title</th>
 		<th>Text</th>
 	</tr>
-	<%= link_to 'Create Article', 'articles/new'%>
-	<%= @articles.each do |article|%>
+	<%= link_to 'Create Article', 'articles/new' %>
+	<% @articles.each do |article|%>
 	<tr>
 		<td><%= article.id %></td>
 		<td><%= article.title %></td>
 		<td><%= article.text %></td>
 		<td><%= link_to 'Show', article_path(article)  %></td>
+		<!--Only Administrators can edit an article-->
+		<% if @user.has_role? :Administrator %>
 		<td><%= link_to 'Edit', edit_article_path(article)  %></td>
+		<% end %>
 		<td><%= link_to 'Destroy', article_path(article),
 			method: :delete,
 			data: { confirm: 'Are you sure you want to delete?' }  %>

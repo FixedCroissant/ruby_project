@@ -3,7 +3,7 @@
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
- 
+
 <p>
   <strong>Text:</strong>
   <%= @article.text %>
@@ -15,6 +15,7 @@
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-
+<% if @user.has_role? :Administrator %>
 <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>
 <%= link_to 'Back', articles_path %>

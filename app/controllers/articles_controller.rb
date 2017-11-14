@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 	def index
       @articles = Article.all
+			@user = current_user
 	end
 
 	  def new
@@ -11,10 +12,11 @@ class ArticlesController < ApplicationController
 	  end
     def show
       @article = Article.find(params[:id])
+			@user = current_user
     end
     def update
     @article = Article.find(params[:id])
- 
+
         if @article.update(article_params)
             redirect_to @article
         else
@@ -28,7 +30,7 @@ class ArticlesController < ApplicationController
           redirect_to @article
         else
           render 'new'
-        end 
+        end
     end
 
     def destroy
