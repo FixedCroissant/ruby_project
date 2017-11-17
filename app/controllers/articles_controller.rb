@@ -1,6 +1,15 @@
 class ArticlesController < ApplicationController
 	def index
-      @articles = Article.all
+		 # GET ALL ARTICLES
+		 @articles = Article.all()
+		 #specify articles to get.
+
+		 #find by a where clause, for the title.
+     #this result limits by only 1 record, using a loop does not work.
+		 #@articles = Article.find_by title: 'Test3'
+
+		 #where information. This provides a list.
+		 #@articles = Article.where('title': 'Test3')
 			@user = current_user
 	end
 

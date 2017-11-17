@@ -38,4 +38,13 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  ##Adjust field labels.
+  config.model 'Student' do
+      list do
+            field :studentID do
+                label "Student ID"
+            end
+        end
+  end
 end
