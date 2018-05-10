@@ -22,3 +22,6 @@
 
 # Ignore Database config
 config/database.yml
+
+# Remove Pesky OSX files
+.DS_Store
