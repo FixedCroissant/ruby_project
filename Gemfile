@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Devise user management
-gem 'devise'
+gem 'devise', '~> 4.4.0'
 # CanCanCan gem
 gem 'cancancan'
 # Rolify gem
