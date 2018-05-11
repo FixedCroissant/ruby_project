@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
+  #Add separate emthod
+  get 'articles/sendMessage', to: 'articles#sendMessage' 
 
   resources :articles  do
   	resources  :comments
