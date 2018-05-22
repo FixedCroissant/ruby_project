@@ -1,0 +1,19 @@
+<p>
+<h3><%= @student.lName %> <%= @student.fName %> </h3>
+
+<!--If No Grades -->
+<% if @student.studentgrade %>
+Below are the grades of the individual student: 
+<% else%>
+This individual has no grades in the system currently.
+
+<% end %>
+<!--Loop through association-->
+<ul>
+    <% @student.studentgrade.each do |students| %>
+      <li>
+      <%= students.courseName%> | <%= students.grade%>  
+      </li>
+    <% end %>
+</ul>
+</p>

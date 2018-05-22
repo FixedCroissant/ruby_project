@@ -1,0 +1,18 @@
+<h2>Edit Specific Student</h1> 
+<%= form_for @student do |form| %>
+  <%= form.label :studentID, 'Student ID:' %> 
+  <%= form.text_field :studentID %>
+  <br/> 
+  <%= form.label :fName, 'First Name:' %> 
+  <%= form.text_field :fName %>
+  <br/> 
+  <%= form.label :lName , 'Last Name:'%> 
+  <%= form.text_field :lName %> 
+  <br/>
+  <%= form.label :classification , 'Classification:'%> 
+  <%# Do not use a form object for the select item. %>
+  <%= select :classification, "classificationName",[['Freshman', 'Freshman'],['Sophomore', 'Sophomore'],['Junior', 'Junior'],['Senior','Senior']]%>
+  <br/>
+<%= form.submit %> 
+<% end %>
+<%= link_to 'Back', students_path %>

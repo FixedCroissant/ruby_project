@@ -3,11 +3,15 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
-  #Add separate emthod
+  #Add separate method
   get 'articles/sendMessage', to: 'articles#sendMessage' 
 
   resources :articles  do
   	resources  :comments
+  end
+  
+  resources :students do 
+    resources :studentgrades
   end
 
   ##TELLS RAILS TO MAP THE ROOT OF THE APPLICATION TO THIS CONTROLLER'S METHOD.

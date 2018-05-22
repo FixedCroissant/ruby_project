@@ -1,0 +1,40 @@
+<h3>Listing Students</h3>
+<br/>
+<br/>
+<table class='table table-responsive'>
+	<tr>
+		<th>ID</th>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Grade</th>
+		<th>Action</th>
+		<th></th>
+	</tr>
+	<%= link_to 'Create Student', 'students/new', class: "btn btn-primary", id:"create-student"  %>
+	<br/>
+	<br/>
+	<br/>
+	<% @students.each do |student|%>
+	<tr>
+		<td><%= student.id %></td>
+		<td><%= student.fName %></td>
+		<td><%= student.lName %></td>
+		<td>
+		 <%= link_to 'Grade', student_studentgrade_path(student.id,student.id) %>
+		</td>
+		<!--Only Administrators can edit an student-->
+		<% if @user.has_role? :Administrator %>
+		<td><%= link_to 'Edit', edit_student_path(student)  %> |<%= link_to 'Show', student_path(student)  %> </td>
+		<% end %>
+		<td><%= link_to 'Remove', student_path(student),
+			method: :delete,
+			data: { confirm: 'Are you sure you want to delete this student?' }  %>
+		</td>
+	</tr>
+	<% end %>
+	<tr>
+		<td><%= link_to 'Go to Homepage', root_path  %></td>
+	</tr>
+</table>
+
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

@@ -47,4 +47,12 @@ RailsAdmin.config do |config|
             end
         end
   end
+  config.model 'Student' do
+      # edit do
+      #   #schoolType
+      #   field :schoolType do
+      #       partial 'school_type_partial'
+      #   end
+      # end
+  end
 end

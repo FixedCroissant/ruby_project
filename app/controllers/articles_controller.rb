@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 			@user = current_user
     end
     def update
-    @article = Article.find(params[:id])
+      @article = Article.find(params[:id])
 
         if @article.update(article_params)
             redirect_to @article
