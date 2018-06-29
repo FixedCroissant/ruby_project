@@ -12,6 +12,34 @@
 
 ActiveRecord::Schema.define(version: 20180517152506) do
 
+  create_table "_students_old_20171117", force: :cascade do |t|
+    t.string   "students"
+    t.integer  "studentID"
+    t.string   "fName"
+    t.string   "lName"
+    t.string   "classification"
+    t.string   "school"
+    t.string   "schoolType"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "_users_old_20171113", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "admin"
+  end
+
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "text"

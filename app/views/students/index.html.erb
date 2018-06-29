@@ -7,8 +7,7 @@
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Grade</th>
-		<th>Action</th>
-		<th></th>
+		<th colspan="2">Action</th>
 	</tr>
 	<%= link_to 'Create Student', 'students/new', class: "btn btn-primary", id:"create-student"  %>
 	<br/>
@@ -24,7 +23,7 @@
 		</td>
 		<!--Only Administrators can edit an student-->
 		<% if @user.has_role? :Administrator %>
-		<td><%= link_to 'Edit', edit_student_path(student)  %> |<%= link_to 'Show', student_path(student)  %> </td>
+		<td><%= link_to 'Edit', edit_student_path(student)  %> &nbsp; | &nbsp;<%= link_to 'Show', student_path(student)  %> </td>
 		<% end %>
 		<td><%= link_to 'Remove', student_path(student),
 			method: :delete,

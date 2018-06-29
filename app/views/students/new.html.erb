@@ -3,7 +3,9 @@
 Create new student record.
 
 <% if @student.errors.any? %>
-  <h3>Whoops! there were some errors. Please try again:</h3>
+  <h3>Whoops! there were some errors.</h3>
+  <br/>
+  <p>Please try submitting again.</p>
   <ul>
     <% @student.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -12,14 +14,14 @@ Create new student record.
 <% end %>
 
 <%= form_for @student do |form| %>
-<%= form.label :studentID %>
+<%= form.label :studentID, 'Student ID:' %>
 <%= form.text_field :studentID  %>
 <br/>
 
-<%= form.label :fName %>
+<%= form.label :fName, 'Student First Name:' %>
 <%= form.text_field :fName %>
 <br/>
-<%= form.label :lName %>
+<%= form.label :lName , 'Student Last Name:'%>
 <%= form.text_field :lName %>
 <br/>
 <%= form.submit %>

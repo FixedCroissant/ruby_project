@@ -8,12 +8,26 @@ Below are the grades of the individual student:
 This individual has no grades in the system currently.
 
 <% end %>
+<!--End If No Grades-->
+<div class="row">
 <!--Loop through association-->
-<ul>
+<table  border="1" cellspacing="1">
     <% @student.studentgrade.each do |students| %>
-      <li>
-      <%= students.courseName%> | <%= students.grade%>  
-      </li>
+      <tr>
+        <td>
+            <%= students.courseName%> 
+        </td>
+        <td>
+            <%= students.grade%>
+        </td>
+      </tr>
     <% end %>
-</ul>
+</table>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <%= link_to 'Back', '/students' %>
+    </div>
+
+</div>
 </p>
