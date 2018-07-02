@@ -11,7 +11,7 @@
   <br/>
   <%= form.label :classification , 'Classification:'%> 
   <%# Do not use a form object for the select item. %>
-  <%= select :classification, "classificationName",[['Freshman', 'Freshman'],['Sophomore', 'Sophomore'],['Junior', 'Junior'],['Senior','Senior']]%>
+  <%= select :classification, "classificationName",[['Freshman', 'Freshman'],['Sophomore', 'Sophomore'],['Junior', 'Junior'],['Senior','Senior']],:selected=>@studentClassification%>
   <br/>
 <%= form.submit %> 
 <% end %>

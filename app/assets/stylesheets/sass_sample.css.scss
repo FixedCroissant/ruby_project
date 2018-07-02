@@ -1,0 +1,26 @@
+$alternateColor:#4955ff;
+
+
+html, body
+{
+    height: 100%;
+}
+
+.container {
+   border:5px solid black;
+   padding:100px;
+   height: 100%; 
+   width: 90%;  
+}
+
+.footer{
+   margin-top:350px;
+   height:100px;
+   background-color:$alternateColor;   
+}
+
+.menu{
+    height:50px;
+    margin-bottom:15px;
+    background-color:$alternateColor;
+}

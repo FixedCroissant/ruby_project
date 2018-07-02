@@ -16,6 +16,7 @@ class StudentsController < ApplicationController
     def edit
         # @students = Student.all()
         @student = Student.find(params['id'])
+        @studentClassification = @student.classification
         #drop down list
         #@dropdown = Student.new(classification: 2)
         #form_for

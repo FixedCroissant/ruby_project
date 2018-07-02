@@ -15,7 +15,7 @@ Create new student record.
 
 <%= form_for @student do |form| %>
 <%= form.label :studentID, 'Student ID:' %>
-<%= form.text_field :studentID  %>
+<%= form.text_field(:studentID,maxlength:3,size:20) %>
 <br/>
 
 <%= form.label :fName, 'Student First Name:' %>

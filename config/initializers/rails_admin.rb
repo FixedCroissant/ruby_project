@@ -39,14 +39,42 @@ RailsAdmin.config do |config|
     # history_show
   end
 
+  ##EXCLUDED MODELS.
+  config.included_models = ["Student","Studentgrade","Role","User"]
+
   ##Adjust field labels.
   config.model 'Student' do
       list do
-            field :studentID do
-                label "Student ID"
+            field :lName  do
+                label "Last"
             end
+            field :fName  do
+              label "First"
+            end
+            field :studentID do
+              label "Student ID"
+            end
+        end #endlist
+  end #endmodel
+  
+  config.model 'Studentgrade' do
+              label "Grade"
+              label_plural "Grades"
+        list do
+             field :studentID do 
+                   label 'Student ID'
+            end
+        end   
+  end
+
+  config.model 'Role' do
+        list do
+              field :name do
+                  label 'Role'
+              end
         end
   end
+
   config.model 'Student' do
       # edit do
       #   #schoolType
