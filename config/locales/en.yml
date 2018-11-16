@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+activerecord:
+  models:
+    Studentgrade:
+      one: Grade
+      other: Grades  

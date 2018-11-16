@@ -29,21 +29,29 @@ RailsAdmin.config do |config|
     new
     export
     bulk_delete
-    show
+    #show
     edit
     #delete
-    show_in_app
+    #show_in_app
 
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
 
+  
+
   ##EXCLUDED MODELS.
   config.included_models = ["Student","Studentgrade","Role","User"]
 
   ##Adjust field labels.
   config.model 'Student' do
+      field :studentgrade do
+          associated_collection_cache_all false
+          associated_collection_scope do
+          
+          end
+      end
       list do
             field :lName  do
                 label "Last"
@@ -58,13 +66,20 @@ RailsAdmin.config do |config|
   end #endmodel
   
   config.model 'Studentgrade' do
+         visible true
               label "Grade"
-              label_plural "Grades"
-        list do
-             field :studentID do 
-                   label 'Student ID'
-            end
-        end   
+              label_plural "Grades"         
+        #list do
+        #     field :studentID do 
+        #           label 'Student ID'
+        #     end
+        #     field :courseNumber do
+        #      label 'Number'
+        #     end
+        #     field :courseName do
+        #            label 'Course Name'
+        #     end
+        #end   
   end
 
   config.model 'Role' do
